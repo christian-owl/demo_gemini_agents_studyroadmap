@@ -1,5 +1,9 @@
 import requests
 
+# ==========================================
+# API DI WIKIPEDIA PER LA RICERCA DI INFORMAZIONI
+# ==========================================
+
 def search_wikipedia(argomento: str) -> str:
     """
     This function searches for information on Wikipedia
@@ -28,7 +32,7 @@ def search_wikipedia(argomento: str) -> str:
 
         summary_url = f"https://it.wikipedia.org/api/rest_v1/page/summary/{titolo_pagina}"
         summary_resp = requests.get(summary_url, headers=headers, timeout=10)
-        summary_resp.raise_for_status()
+        summary_resp.raise_for_status() #serve a sollevare un eventuale eccezione
         dati = summary_resp.json()
 
         return dati.get("extract", "Nessun contenuto disponibile.")

@@ -14,3 +14,6 @@ class QuizGeneratorAgent(BaseAgent):
         
     def generate_quiz(self, titolo: str) -> str:
         return self.run(titolo)
+    
+    def submit(self, titolo: str, risposta: str):
+        edit(titolo, risposta) #edit a parte per evitare che l'IA faccia errori di scrittura
